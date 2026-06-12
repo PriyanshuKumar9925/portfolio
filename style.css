@@ -80,6 +80,26 @@ body{
     font-family:'Fira Code', monospace;
 }
 
+.hero-content .typing {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 3px solid #00ffae;
+    animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00ffae; }
+}
+
 .hero-content p{
     font-size:18px;
     line-height:1.8;
