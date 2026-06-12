@@ -1,41 +1,25 @@
-const toggle = document.querySelector(".theme-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-toggle.addEventListener("click", () => {
-document.body.classList.toggle("dark");
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
 
-const texts = [
-"Backend Developer",
-"Web Developer",
-"Python Developer",
-"Engineering Student"
-];
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
 
-(function type(){
-
-if(count === texts.length){
-count = 0;
-}
-
-currentText = texts[count];
-letter = currentText.slice(0, ++index);
-
-document.getElementById("typing").textContent = letter;
-
-if(letter.length === currentText.length){
-
-count++;
-index = 0;
-
-setTimeout(type,1000);
-
-}else{
-setTimeout(type,100);
-}
-
-})();
+    if(name && email && message) {
+        alert("Message sent successfully!");
+        this.reset();
+    } else {
+        alert("Please fill all fields");
+    }
+    window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("sticky", window.scrollY > 50);
+});
+});

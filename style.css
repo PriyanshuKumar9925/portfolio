@@ -1,205 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-:root{
---bg:#ffffff;
---text:#111111;
---primary:#2563eb;
---card:#f5f5f5;
-}
-
-.dark{
---bg:#121212;
---text:#ffffff;
---card:#1f1f1f;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-background:var(--bg);
-color:var(--text);
-transition:.3s;
+    background:#0a0a0a;
+    color:white;
+    font-family:'Poppins',sans-serif;
 }
 
-header{
-position:fixed;
-width:100%;
-background:var(--bg);
-padding:20px 8%;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-z-index:100;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* Navbar */
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 .logo{
-font-size:24px;
-font-weight:700;
+    font-size:28px;
+    font-weight:700;
+    color:#00ffae;
+    font-family:'Fira Code', monospace;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:20px;
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
 }
 
-nav a{
-text-decoration:none;
-color:var(--text);
-font-weight:500;
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
 }
 
+.nav-links a:hover{
+    color:#00ffae;
+}
+
+/* Hero */
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
 }
 
-.hero h1{
-font-size:55px;
-margin-bottom:10px;
+.hero-content{
+    width:55%;
 }
 
-.hero h1 span{
-color:var(--primary);
+.hero-content h1{
+    font-size:65px;
+    line-height:1.2;
 }
 
-.hero h2{
-font-size:30px;
-margin-bottom:15px;
+.hero-content h1 span{
+    color:#00ffae;
 }
 
-.hero p{
-font-size:18px;
-margin-bottom:30px;
+.hero-content h2{
+    margin:20px 0;
+    font-size:28px;
+    color:#aaa;
+    font-family:'Fira Code', monospace;
 }
 
-.btn,
-.btn-outline{
-padding:12px 25px;
-text-decoration:none;
-border-radius:8px;
-margin:10px;
-display:inline-block;
+.hero-content p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+    color:#ccc;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
 }
 
 .btn{
-background:var(--primary);
-color:white;
+    padding:14px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
 }
 
-.btn-outline{
-border:2px solid var(--primary);
-color:var(--primary);
+.btn:first-child{
+    background:#00ffae;
+    color:black;
 }
 
-section{
-padding:100px 10%;
+.secondary{
+    border:2px solid #00ffae;
+    color:#00ffae;
 }
 
-.section-title{
-font-size:40px;
-text-align:center;
-margin-bottom:50px;
+.btn:hover{
+    transform:translateY(-3px);
 }
 
-.about-container{
-max-width:900px;
-margin:auto;
-text-align:center;
-font-size:20px;
-line-height:1.8;
+.hero-image img{
+    width:350px;
+    border-radius:20px;
+    border:2px solid #00ffae;
+    box-shadow:0 0 40px rgba(0,255,174,.4);
 }
 
+/* Sections */
+.section{
+    padding:100px 8%;
+}
+
+.section h2{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#00ffae;
+    font-family:'Fira Code', monospace;
+}
+
+/* Terminal About */
+.terminal{
+    background:#111;
+    border-radius:15px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,.1);
+    font-family:'Fira Code', monospace;
+    line-height:2;
+}
+
+/* Skills */
 .skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
 .skill-card{
-background:var(--card);
-padding:25px;
-text-align:center;
-border-radius:10px;
-font-weight:600;
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:15px;
+    backdrop-filter:blur(20px);
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.08);
 }
 
-.project-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+.skill-card:hover{
+    transform:translateY(-8px);
+    border-color:#00ffae;
 }
 
+/* Projects */
 .project-card{
-background:var(--card);
-padding:30px;
-border-radius:15px;
-transition:.3s;
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
 }
 
 .project-card:hover{
-transform:translateY(-10px);
+    transform:scale(1.02);
 }
 
+.project-card h3{
+    color:#00ffae;
+    margin-bottom:10px;
+}
+
+.tech-stack{
+    margin-top:15px;
+}
+
+.tech-stack span{
+    display:inline-block;
+    padding:8px 14px;
+    margin:5px;
+    border-radius:20px;
+    background:#1f1f1f;
+    color:#00ffae;
+    font-size:14px;
+}
+
+/* Achievements */
+ul{
+    line-height:2;
+    color:#ccc;
+}
+
+/* Contact */
 .contact-box{
-text-align:center;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
 }
 
-.socials{
-margin-top:20px;
+form{
+    display:flex;
+    flex-direction:column;
 }
 
-.socials a{
-font-size:30px;
-margin:10px;
-color:var(--primary);
+form input,
+form textarea{
+    padding:16px;
+    margin-bottom:15px;
+    background:#111;
+    border:1px solid rgba(255,255,255,.1);
+    color:white;
+    border-radius:10px;
 }
 
+form button{
+    background:#00ffae;
+    padding:14px;
+    border:none;
+    font-weight:700;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* Footer */
 footer{
-text-align:center;
-padding:20px;
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#777;
 }
 
-.theme-toggle{
-position:fixed;
-right:20px;
-bottom:20px;
-background:var(--primary);
-width:55px;
-height:55px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-color:white;
-cursor:pointer;
-font-size:20px;
-}
-
+/* Responsive */
 @media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:120px;
+    }
 
-.hero h1{
-font-size:38px;
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .hero-image img{
+        width:280px;
+        margin-top:40px;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+    .social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.hero h2{
-font-size:24px;
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    transition: 0.3s ease;
 }
 
-nav ul{
-display:none;
+/* Icon color */
+.social-links a i {
+    color: #00ff88;
+    font-size: 18px;
 }
 
+/* Hover effect */
+.social-links a:hover {
+    background: #00ff88;
+    color: #000;
+    box-shadow: 0 0 15px #00ff88;
+    transform: translateY(-3px);
+}
+
+.social-links a:hover i {
+    color: #000;
+}
 }
