@@ -51,6 +51,20 @@ body{
     color:#00ffae;
 }
 
+/* Menu toggle (hamburger) */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    user-select:none;
+    color: #fff;
+}
+
+/* Mobile: when active show nav links */
+.nav-links.active{
+    display:flex;
+}
+
 /* Hero */
 .hero{
     min-height:100vh;
@@ -324,6 +338,23 @@ footer{
 
     .nav-links{
         display:none;
+    }
+    .menu-toggle{
+        display:block;
+    }
+    .nav-links.active{
+        position: absolute;
+        top: 70px;
+        right: 8%;
+        background: rgba(255,255,255,0.03);
+        backdrop-filter: blur(10px);
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.06);
+        flex-direction: column;
+        gap: 12px;
+        display: flex;
+        z-index: 999;
     }
     .social-links {
     margin-top: 20px;
